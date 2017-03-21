@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>它亮了</title>
+	<style type="text/css">
+		@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+		body.its-lighted {
+			background-color: white;
+		}
+		body.its-darked {
+			background-color: #555555;
+		}
+		div.center {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: 300px;
+			width: 600px;
+			padding: 10px;
+			margin: -150px 0 0 -300px;
+		}
+		div.status {
+			font-family: 'Noto Sans TC', sans-serif;
+			text-align: center;
+			font-size: 100px;
+		}
+		div.hide {
+			font-family: 'Noto Sans TC', sans-serif;
+			text-align: center;
+			font-size: 10px;
+		}
+		div.its-lighted {
+			color: #555555;
+		}
+		div.its-darked {
+			color: white;
+		}
+		button.button {
+			font-family: 'Noto Sans TC', sans-serif;
+		    background-color: white;
+		    border: none;
+		    color: #555555;
+		    padding: 16px 32px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 16px;
+		    -webkit-transition-duration: 0.4s; /* Safari */
+		    transition-duration: 0.4s;
+		    cursor: pointer;
+		    position:relative;
+		    left: 50%;
+		    margin: 8px 0 0 -60px;
+		}
+		button.turn-off {
+		    background-color: white;
+		    color: #555555;
+		    border: 2px solid #555555;
+		    border-radius: 12px;
+		}
+		button.turn-off:hover {
+		    background-color: #555555;
+		    color: white;
+		}
+		button.turn-on {
+			background-color: #555555;
+			color: white;
+			border: 2px solid white;
+			border-radius: 12px;
+		}
+		button.turn-on:hover {
+		    background-color: white;
+		    color: #555555;
+		}
+	</style>
+	<script type="text/javascript">
+		function changeStatus(){
+			var body = document.body;
+			var status = document.getElementById('status');
+			var hide = document.getElementById('hide');
+			var button = document.getElementById('button');
+			if (status.innerHTML == '它亮了'){
+				status.innerHTML = '它暗了';
+				hide.innerHTML = '你的未來也是';
+				button.innerHTML = '打開它';
+				body.className = 'its-darked';
+				status.className = 'status its-darked';
+				hide.className = 'hide its-darked';
+				button.className = 'button turn-on';
+			}
+			else {
+				status.innerHTML = '它亮了';
+				hide.innerHTML = '但是你的未來不是';
+				button.innerHTML = '關掉它';
+				body.className = 'its-lighted';
+				status.className = 'status its-lighted';
+				hide.className = 'hide its-lighted';
+				button.className = 'button turn-off';
+			};
+		};
+	</script>
+</head>
+<body class="its-lighted">
+	<div class="center">
+		<div class="status its-lighted" id="status">它亮了</div>
+		<div class="hide its-lighted" id="hide">　</div>
+		<button class="button turn-off" id="button" onclick="changeStatus()">關掉它</button>
+
+	</div>
+</body>
+</html>
